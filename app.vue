@@ -1,22 +1,23 @@
+<script setup lang="ts">
+import { UButton } from '#components'
+import { useColorMode } from '#imports'
+const colorMode = useColorMode()
+const toggleTheme = () => {
+  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
+}
+</script>
+
 <template>
-  <UContainer>
-    <UCard class="mt-10">
-      <template #header>
-        <div class="flex justify-between">
-          <h1>Welcome to Nuxt UI Starter</h1>
-          <ColorScheme
-            ><USelect
-              v-model="$colorMode.preference"
-              :options="['system', 'light', 'dark']"
-          /></ColorScheme>
-        </div>
-      </template>
-      <UButton
-        icon="i-heroicons-book-open"
-        to="https://ui.nuxt.com"
-        target="_blank"
-        >Open Nuxt UI Documentation</UButton
-      >
-    </UCard>
-  </UContainer>
+  <div class="flex flex-col h-screen items-center justify-center gap-4">
+    <p class="text-3xl">template - nuxt@3 - nuxt/ui</p>
+    <UButton
+      :icon="
+        colorMode.value === 'dark'
+          ? 'i-heroicons-moon-20-solid'
+          : 'i-heroicons-sun-20-solid'
+      "
+      @click="toggleTheme"
+    >
+    </UButton>
+  </div>
 </template>
