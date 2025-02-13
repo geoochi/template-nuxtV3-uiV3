@@ -2,6 +2,7 @@
 import { UButton } from '#components'
 import { useColorMode } from '#imports'
 const colorMode = useColorMode()
+colorMode.preference = 'system'
 const toggleTheme = () => {
   colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
 }
