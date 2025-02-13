@@ -3,4 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/ui'],
   compatibilityDate: '2025-02-13',
+  app: {
+    baseURL: './'
+  }
 })
