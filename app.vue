@@ -1,26 +1,28 @@
 <script setup lang="ts">
-import { UButton } from '#components'
-import { useColorMode } from '#imports'
 const colorMode = useColorMode()
-colorMode.preference = 'system'
-const toggleTheme = () => {
-  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
-}
+const isDark = computed({
+  get() {
+    return colorMode.value === 'dark'
+  },
+  set() {
+    colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
+  },
+})
 </script>
 
 <template>
-  <div class="flex flex-col h-screen items-center justify-center gap-4">
-    <p class="text-3xl">template - nuxt@3 - nuxt/ui</p>
-    <UButton
-      :icon="
-        colorMode.value === 'dark'
-          ? 'i-heroicons-moon-20-solid'
-          : 'i-heroicons-sun-20-solid'
-      "
-      color="gray"
-      variant="ghost"
-      @click="toggleTheme"
-    >
-    </UButton>
-  </div>
+  <ClientOnly>
+    <div class="flex flex-col h-screen items-center justify-center">
+      <p class="text-3xl">template - nuxt@3 - nuxt/ui</p>
+      <UButton
+        :icon="
+          isDark ? 'i-heroicons-moon-20-solid' : 'i-heroicons-sun-20-solid'
+        "
+        color="gray"
+        variant="ghost"
+        aria-label="Theme"
+        @click="isDark = !isDark"
+      />
+    </div>
+  </ClientOnly>
 </template>
