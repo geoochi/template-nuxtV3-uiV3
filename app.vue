@@ -12,7 +12,7 @@ const isDark = computed({
 
 <template>
   <ClientOnly>
-    <div class="flex flex-col h-screen items-center justify-center">
+    <div class="flex flex-col h-screen items-center justify-center gap-4">
       <p class="text-3xl">template - nuxt@3 - nuxt/ui</p>
       <UButton
         :icon="
