@@ -6,7 +6,7 @@
     "b": "nuxt build",
     "g": "nuxt generate",
     "p": "node .output/server/index.mjs",
-    "p-static": "pnpx serve dist -l 3000",
+    "p-static": "pnpx http-server dist -a 127.0.0.1 -p 3000",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
