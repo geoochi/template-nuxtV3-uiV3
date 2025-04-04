@@ -1,5 +1,9 @@
 <script lang="ts" setup>
 const colorMode = useColorMode()
+// 确保初始值一致
+colorMode.preference = 'system'
+colorMode.value = 'system'
+
 const togglePreference = () => {
   colorMode.preference = colorMode.preference === 'dark' ? 'light' : 'dark'
 }
