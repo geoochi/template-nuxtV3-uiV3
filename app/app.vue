@@ -19,7 +19,7 @@ const toggleValue = () => {
           variant="outline"
           :icon="
             colorMode.preference === 'system'
-              ? 'i-lucide-loader-circle'
+              ? 'i-lucide-monitor'
               : colorMode.preference === 'light'
               ? 'i-lucide-sun'
               : 'i-lucide-moon'
@@ -29,7 +29,7 @@ const toggleValue = () => {
           variant="outline"
           :icon="
             colorMode.value === 'system'
-              ? 'i-lucide-loader-circle'
+              ? 'i-lucide-monitor'
               : colorMode.value === 'light'
               ? 'i-lucide-sun'
               : 'i-lucide-moon'
