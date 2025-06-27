@@ -1,12 +1,11 @@
 {
   "type": "module",
-  "packageManager": "pnpm@10.12.0",
   "scripts": {
     "d": "nuxt dev",
     "b": "nuxt build",
     "g": "nuxt generate",
-    "p": "pnpx http-server dist -a localhost -p 3000",
-    "start": "node .output/server/index.mjs",
+    "p": "bunx http-server dist -a localhost -p 5173",
+    "start": "bun .output/server/index.mjs",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
